@@ -13,45 +13,6 @@ const SlideshowContainer = styled.div`
   align-items: center;
 `;
 
-const ImageContainer = styled.div`
-  position: relative;
-  width: 770px;
-`;
-
-const Image = styled.img`
-  height: 100%;
-`;
-
-const ImageOverlay = styled.div`
-  border-radius: 20px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.8)
-  );
-`;
-
-const ImageText = styled.span`
-  font-size: 20px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.1;
-  letter-spacing: -0.32px;
-  text-align: center;
-  color: #c5d2e3;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-`;
-
 const Slides = styled.div`
   display: flex;
   flex-direction: row;
@@ -186,7 +147,11 @@ const IMAGES = [
 
 export default function Slideshow() {
   const [current, setCurrent] = React.useState(1);
-  const [images, setImages] = React.useState(IMAGES);
+  const [images, setImages] = React.useState([]);
+
+  React.useEffect(() => {
+    setImages(IMAGES);
+  }, []);
 
   const nextPage = () =>
     current < images.length ? setCurrent(current + 1) : setCurrent(1);

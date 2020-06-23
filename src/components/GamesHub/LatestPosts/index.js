@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Post from "./Post";
+import { Column } from "../../../utils/flexbox";
 
 const POSTS_DATA = [
   {
@@ -55,7 +56,7 @@ const Posts = styled.ul`
 
 export default function LatestPosts() {
   return (
-    <div>
+    <Column flex="2">
       <Title>Latest posts</Title>
       <Posts>
         {POSTS_DATA.map(post => (
@@ -70,6 +71,6 @@ export default function LatestPosts() {
           />
         ))}
       </Posts>
-    </div>
+    </Column>
   );
 }

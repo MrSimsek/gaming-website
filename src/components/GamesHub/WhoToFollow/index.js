@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import User from "./User";
 import Button from "../../Button";
+import { Column } from "../../../utils/flexbox";
 
 const USERS_DATA = [
   {
@@ -43,12 +44,12 @@ const Users = styled.div`
   flex-direction: column;
   padding: 1em 0;
   border-top: 1px solid black;
-  width: 250px;
+  width: 100%;
 `;
 
 export default function WhoToFollow() {
   return (
-    <div style={{ marginLeft: "2em" }}>
+    <Column style={{ marginLeft: "50px" }}>
       <Title>Who to follow?</Title>
       <Users>
         {USERS_DATA.map(({ id, imageUrl, name, usersCount }) => (
@@ -61,6 +62,6 @@ export default function WhoToFollow() {
         ))}
       </Users>
       <Button>Discover All</Button>
-    </div>
+    </Column>
   );
 }

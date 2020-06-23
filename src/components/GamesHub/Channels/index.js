@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Channel from "./Channel";
 import Button from "../../Button";
+import { Column } from "../../../utils/flexbox";
 
 const CHANNELS_DATA = [
   {
@@ -43,12 +44,12 @@ const ChannelsContainer = styled.div`
   flex-direction: column;
   padding: 1em 0;
   border-top: 1px solid black;
-  width: 250px;
+  width: 100%;
 `;
 
 export default function Channels() {
   return (
-    <div style={{ marginLeft: "2em" }}>
+    <Column style={{ marginLeft: "50px" }} alignItems="flex-start">
       <Title>Channels</Title>
       <ChannelsContainer>
         {CHANNELS_DATA.map(({ id, imageUrl, name, usersCount }) => (
@@ -61,6 +62,6 @@ export default function Channels() {
         ))}
       </ChannelsContainer>
       <Button>Find more</Button>
-    </div>
+    </Column>
   );
 }

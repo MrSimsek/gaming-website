@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Games from "./Games";
 
-import DiscoverAllButton from "../Button";
 import Button from "../Button";
 
 const Section = styled.section`
@@ -56,6 +55,16 @@ const Body = styled.div`
   flex-direction: column;
 `;
 
+const DiscoverAllButton = styled(Button)`
+  margin-left: auto;
+`;
+
+const LoadMoreButton = styled(Button)`
+  margin: 1em auto;
+  padding: 1em;
+  width: 218px;
+`;
+
 export default function UpcomingGames() {
   return (
     <Section>
@@ -69,7 +78,7 @@ export default function UpcomingGames() {
         </Head>
         <Body>
           <Games />
-          <Button>LOAD MORE</Button>
+          <LoadMoreButton>LOAD MORE</LoadMoreButton>
         </Body>
       </Container>
     </Section>

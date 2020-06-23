@@ -100,13 +100,13 @@ const InstallApp = () => (
 const StoreLinks = () => (
   <Row>
     <Column>
-      <img src={playStoreIcon} />
+      <img alt="Play Store" src={playStoreIcon} />
       <StoreLinkText>
         Get it on <br /> Google Play©
       </StoreLinkText>
     </Column>
     <Column>
-      <img src={appStoreIcon} />
+      <img alt="App Store" src={appStoreIcon} />
       <StoreLinkText>
         Download on the <br /> App Store®
       </StoreLinkText>

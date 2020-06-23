@@ -5,7 +5,7 @@ import LatestPosts from "./LatestPosts";
 import Channels from "./Channels";
 import WhoToFollow from "./WhoToFollow";
 
-import DiscoverAllButton from "../Button";
+import Button from "../Button";
 
 const Section = styled.section`
   margin: auto;
@@ -50,6 +50,10 @@ const Subtitle = styled.p`
 const Body = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+const DiscoverAllButton = styled(Button)`
+  margin-left: auto;
 `;
 
 export default function GamesHub() {
