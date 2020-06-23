@@ -54,18 +54,19 @@ const Slide = styled.div`
     isPrev || isNext ? "absolute" : "relative"};
   top: ${({ isNext, isPrev }) => (isPrev || isNext ? "20px" : "0")};
   bottom: 0;
-  left: ${({ isPrev, isNext }) =>
-    isPrev ? "-220px" : isNext ? "1080px" : "0"};
   z-index: ${({ isNext, isPrev }) => (isPrev || isNext ? "-10" : "0")};
   height: ${({ isNext, isPrev }) => (isPrev || isNext ? "360px" : "391px")};
   opacity: ${({ isNext, isPrev }) => (isPrev || isNext ? "0.4" : "1")};
-  transform: ${({ isNext, isPrev }) =>
-    isPrev
-      ? "perspective(1500px) rotateY(45deg)"
-      : isNext
-      ? "perspective(1500px) rotateY(-45deg)"
-      : "none"};
-  transition: left 0.3s ease-in-out;
+  transform: translateX(
+      ${({ isPrev, isNext }) => (isPrev ? "-680px" : isNext ? "640px" : "0")}
+    )
+    ${({ isNext, isPrev }) =>
+      isPrev
+        ? "perspective(1500px) rotateY(45deg)"
+        : isNext
+        ? "perspective(1500px) rotateY(-45deg)"
+        : "none"};
+  transition: transform 0.3s ease-in-out;
 `;
 
 const Shadow = styled.div`
