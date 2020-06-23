@@ -52,14 +52,14 @@ const Slide = styled.div`
   margin: 1em;
   position: ${({ isNext, isPrev }) =>
     isPrev || isNext ? "absolute" : "relative"};
-  top: ${({ isNext, isPrev }) => (isPrev || isNext ? "20px" : "0")};
+  top: 0;
   bottom: 0;
   z-index: ${({ isNext, isPrev }) => (isPrev || isNext ? "-10" : "0")};
-  height: ${({ isNext, isPrev }) => (isPrev || isNext ? "360px" : "391px")};
   opacity: ${({ isNext, isPrev }) => (isPrev || isNext ? "0.4" : "1")};
   transform: translateX(
-      ${({ isPrev, isNext }) => (isPrev ? "-680px" : isNext ? "640px" : "0")}
+      ${({ isPrev, isNext }) => (isPrev ? "-630px" : isNext ? "585px" : "0")}
     )
+    scale(${({ isPrev, isNext }) => (isPrev || isNext ? "0.8" : "1")})
     ${({ isNext, isPrev }) =>
       isPrev
         ? "perspective(1500px) rotateY(45deg)"
@@ -98,6 +98,7 @@ const Dot = styled.div`
   background-color: ${({ active }) => (active ? "#fafafa" : "grey")};
   border-radius: 50%;
   margin: 5px;
+  cursor: pointer;
 `;
 
 const SlideNavigateButton = styled.button`
@@ -177,7 +178,11 @@ export default function Slideshow() {
           <SlideNavigateButton onClick={nextPage}>NEXT</SlideNavigateButton>
           <Dots>
             {images.map(({ id }) => (
-              <Dot key={id} active={current === id} />
+              <Dot
+                key={id}
+                active={current === id}
+                onClick={() => setCurrent(id)}
+              />
             ))}
           </Dots>
         </Slides>
