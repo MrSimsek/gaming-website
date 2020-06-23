@@ -6,11 +6,15 @@ import UpcomingGames from "../components/UpcomingGames";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import Trademark from "../components/Trademark";
+import Slideshow from "../components/Slideshow";
+import Tabs from "../components/Tabs";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Tabs />
+      <Slideshow />
       <GamesHub />
       <UpcomingGames />
       <Newsletter />
