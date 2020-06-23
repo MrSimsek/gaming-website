@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { IoMdMail } from "react-icons/io";
 
 const Section = styled.section`
   background-color: #2e0f53;
@@ -33,6 +34,7 @@ const EmailInput = styled.input`
   background-color: #111113;
   width: 440px;
   padding: 10px;
+  padding-left: 38px;
 
   font-size: 15px;
   font-weight: normal;
@@ -68,7 +70,14 @@ export default function Newsletter() {
     <Section>
       <Container>
         <GetDealsText>Get your best games deals first</GetDealsText>
-        <EmailInput type="text" placeholder="Enter your email" />
+        <div style={{ position: "relative" }}>
+          <EmailInput type="text" placeholder="Enter your email" />
+          <IoMdMail
+            size={20}
+            style={{ position: "absolute", left: "10", top: "11" }}
+            color="#4f4f53"
+          />
+        </div>
         <SubscribeButton>Subscribe</SubscribeButton>
       </Container>
     </Section>

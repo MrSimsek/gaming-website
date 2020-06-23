@@ -13,10 +13,14 @@ const Column = styled.div`
 
 const Game = styled(Column)`
   margin: 1em;
+  flex: 1;
+  margin-left: 0;
+  width: 192px;
+  justify-content: space-between;
 `;
 
 const GameImage = styled.img`
-  width: 192px;
+  width: 100%;
   border-radius: 10px;
 `;
 

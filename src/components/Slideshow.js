@@ -146,7 +146,7 @@ const IMAGES = [
 ];
 
 export default function Slideshow() {
-  const [current, setCurrent] = React.useState(1);
+  const [current, setCurrent] = React.useState(2);
   const [images, setImages] = React.useState([]);
 
   React.useEffect(() => {
