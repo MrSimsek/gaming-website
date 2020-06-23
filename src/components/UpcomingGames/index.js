@@ -1,13 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
+import Games from "./Games";
+
 import DiscoverAllButton from "../Button";
+import Button from "../Button";
 
 const Section = styled.section`
+  background-color: #17171a;
+`;
+
+const Container = styled.div`
   margin: auto;
   width: 90%;
   max-width: 1200px;
-  margin-top: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 `;
 
 const Head = styled.div`
@@ -45,20 +53,25 @@ const Subtitle = styled.p`
 
 const Body = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 export default function UpcomingGames() {
   return (
     <Section>
-      <Head>
-        <Title>Upcoming Games</Title>
-        <Subtitle>
-          Pre-order an upcoming game to start playing on Day 1.
-        </Subtitle>
-        <DiscoverAllButton>Discover All</DiscoverAllButton>
-      </Head>
-      <Body></Body>
+      <Container>
+        <Head>
+          <Title>Upcoming Games</Title>
+          <Subtitle>
+            Pre-order an upcoming game to start playing on Day 1.
+          </Subtitle>
+          <DiscoverAllButton>Discover All</DiscoverAllButton>
+        </Head>
+        <Body>
+          <Games />
+          <Button>LOAD MORE</Button>
+        </Body>
+      </Container>
     </Section>
   );
 }
