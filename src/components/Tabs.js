@@ -35,7 +35,7 @@ const Tab = styled.li`
       ? "linear-gradient(to bottom, #39393f, rgba(34, 34, 37, 0)), linear-gradient(to bottom, #1c1c1e, #1c1c1e)"
       : "none"};
   border-top: ${({ isActive, color }) =>
-    isActive ? `1px solid ${color}` : "none"};
+    isActive ? `1px solid ${color}` : "1px solid #151517"};
   transition: all 0.2s ease-in-out;
 `;
 
