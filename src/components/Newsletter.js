@@ -33,7 +33,7 @@ const EmailInput = styled.input`
   border-radius: 6px;
   background-color: #111113;
   width: 440px;
-  padding: 10px;
+  height: 44px;
   padding-left: 38px;
 
   font-size: 15px;
@@ -59,7 +59,7 @@ const SubscribeButton = styled.button`
   text-align: center;
   color: #ffffff;
 
-  padding: 1em;
+  height: 44px;
   width: 166px;
 
   cursor: pointer;
