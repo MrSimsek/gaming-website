@@ -26,8 +26,8 @@ const SiteLogo = styled.div`
   background-color: #000;
   border-radius: 10px;
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 1em;
+  left: 28px;
 `;
 
 export default function Header() {
