@@ -7,11 +7,13 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import Trademark from "../components/Trademark";
 import Slideshow from "../components/Slideshow";
+import TabsComponent from "../components/Tabs";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <TabsComponent />
       <Slideshow />
       <GamesHub />
       <UpcomingGames />

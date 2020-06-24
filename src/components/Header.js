@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import SearchBar from "./SearchBar";
 import Navbar from "./Navbar";
-import TabsComponent from "./Tabs";
 
 const HeaderContainer = styled.header`
   background-color: #1c1c1e;
@@ -24,7 +23,7 @@ const Container = styled.div`
 const SiteLogo = styled.div`
   width: 90px;
   height: 90px;
-  background-color: #dadada;
+  background-color: #000;
   border-radius: 10px;
   position: absolute;
   top: 25px;
@@ -34,12 +33,11 @@ const SiteLogo = styled.div`
 export default function Header() {
   return (
     <HeaderContainer>
-      <SiteLogo />
       <Container>
+        <SiteLogo />
         <SearchBar />
         <Navbar />
       </Container>
-      <TabsComponent />
     </HeaderContainer>
   );
 }

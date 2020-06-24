@@ -8,8 +8,9 @@ export const POSTS_DATA = [
     isPro: false,
     followerCount: 15,
     commentsCount: 12,
+    clapsCount: 200,
     excerpt:
-      "Sniper isnt overpowered. Sniper has some of the lowest damage outputs in the game. 50 damage per shot is terrible, especially with the fire rate. Compared to heavy, who has 400+ DPS!.. Read More tell me how sniper compares."
+      "Sniper isnt overpowered. Sniper has some of the lowest damage outputs in the game. 50 damage per shot is terrible, especially with the fire rate. Compared to heavy, who has 400+ DPS! tell me how sniper compares."
   },
   {
     id: 2,
@@ -20,8 +21,9 @@ export const POSTS_DATA = [
     isPro: true,
     followerCount: 3253,
     commentsCount: 0,
+    clapsCount: 0,
     excerpt:
-      "It'll still be long enough that it cannot be spammed. But will increase usefulness of the watch by not.. "
+      "It'll still be long enough that it cannot be spammed. But will increase usefulness of the watch by not"
   },
   {
     id: 3,
@@ -32,7 +34,8 @@ export const POSTS_DATA = [
     isPro: true,
     followerCount: 125,
     commentsCount: 156,
+    clapsCount: 1200,
     excerpt:
-      "If you've not yet played CS:GO, do yourself a favor and play first. Excellent game, and this one ties in heavily with the story from the last.. "
+      "If you've not yet played CS:GO, do yourself a favor and play first. Excellent game, and this one ties in heavily with the story from the last"
   }
 ];

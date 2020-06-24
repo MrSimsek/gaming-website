@@ -13,14 +13,15 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 1em auto;
+  margin: 1em;
+  margin-left: 2em;
   flex: 1;
 `;
 
 const NavLink = styled.a`
   margin: 0 1em;
   cursor: pointer;
-  color: #8e8e93;
+  color: ${({ active }) => (active ? "#0091ff" : "#8e8e93")};
 
   &:hover {
     color: #0091ff;
@@ -30,7 +31,7 @@ const NavLink = styled.a`
 function Navbar() {
   return (
     <Nav>
-      <NavLink href="#">
+      <NavLink href="#" active>
         <FaUserAlt size={20} />
       </NavLink>
       <NavLink href="#">

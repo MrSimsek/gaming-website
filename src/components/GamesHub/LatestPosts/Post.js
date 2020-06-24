@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { FaRetweet, FaCommentAlt, FaHandPaper } from "react-icons/fa";
 import { IoIosShare } from "react-icons/io";
 
+import { numberWithK } from "../../../utils/helpers";
+
 const PostItem = styled.li`
   border-radius: 10px;
   background-color: #27272c;
@@ -77,9 +79,10 @@ const Content = styled.p`
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.38;
+  line-height: 1.5;
   letter-spacing: normal;
   color: #f2f2f2;
+  margin-bottom: 2em;
 `;
 
 const ProBadge = styled.span`
@@ -101,13 +104,14 @@ const Footer = styled.div`
 const ActionButtons = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 const ActionButton = styled.button`
   border: none;
-  border: 2px solid #44484f;
+  border: 2px solid ${({ active }) => (active ? "#ffb100" : "#44484f")};
   background: none;
-  color: #44484f;
+  color: ${({ active }) => (active ? "#ffb100" : "#44484f")};
   border-radius: 10px;
   padding: 5px 6px;
   cursor: pointer;
@@ -140,6 +144,43 @@ const CommentsCount = styled.span`
   color: rgba(235, 235, 245, 0.6);
 `;
 
+const AddComment = styled.span`
+  margin-right: 1em;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: right;
+  color: #0091ff;
+`;
+
+const ClapsCount = styled.span`
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: rgba(235, 235, 245, 0.6);
+`;
+
+const ReadMore = styled.span`
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: #0091ff;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 6px;
+`;
+
 export default function Post({
   imageSource,
   displayName,
@@ -147,8 +188,15 @@ export default function Post({
   followerCount,
   isPro,
   commentsCount,
-  excerpt
+  excerpt,
+  clapsCount = 0
 }) {
+  const [userClaps, setUserClaps] = React.useState(0);
+  const [readMore, setReadMore] = React.useState(false);
+
+  const clapPost = () => setUserClaps(userClaps + 1);
+  const toggleReadMore = () => setReadMore(!readMore);
+
   return (
     <PostItem>
       <div
@@ -187,7 +235,19 @@ export default function Post({
         </User>
         <CreatedTime>3hrs ago</CreatedTime>
       </div>
-      <Content>{excerpt ? excerpt : "This is placeholder."}</Content>
+      <Content>
+        {excerpt && excerpt.length > 180 && !readMore
+          ? excerpt.substring(0, 180)
+          : excerpt}
+        ...
+        {excerpt && excerpt.length > 180 ? (
+          <ReadMore onClick={toggleReadMore}>
+            {readMore ? "Read Less" : "Read More"}
+          </ReadMore>
+        ) : (
+          ""
+        )}
+      </Content>
       <Footer>
         <ActionButtons>
           <ActionButton>
@@ -196,15 +256,18 @@ export default function Post({
           <ActionButton>
             <IoIosShare size={20} />
           </ActionButton>
-          <ActionButton>
+          <ActionButton onClick={clapPost} active={userClaps > 0}>
             <FaHandPaper size={20} />
           </ActionButton>
+          {userClaps + clapsCount > 0 && (
+            <ClapsCount>{numberWithK(userClaps + clapsCount)}</ClapsCount>
+          )}
         </ActionButtons>
         <Comments>
           {commentsCount > 0 ? (
             <CommentsCount>{commentsCount} Comments</CommentsCount>
           ) : (
-            <CommentsCount>Add your comment</CommentsCount>
+            <AddComment>Add your comment</AddComment>
           )}
           <FaCommentAlt size={15} />
         </Comments>

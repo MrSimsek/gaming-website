@@ -52,7 +52,9 @@ const OriginalPrice = styled.span`
   line-height: 1.48;
   letter-spacing: normal;
   color: rgba(235, 235, 245, 0.4);
+  text-decoration: line-through;
 `;
+
 const DiscountPercentage = styled.span`
   font-size: 13px;
   font-weight: bold;

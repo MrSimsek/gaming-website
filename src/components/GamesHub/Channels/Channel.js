@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 
+import { numberWithK } from "../../../utils/helpers";
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -45,9 +47,6 @@ const TotalUsers = styled.span`
   margin-top: 3px;
 `;
 
-const displayUserCount = count =>
-  count % 1000 === 0 ? `${count / 1000}K` : count;
-
 export default function Channel({ imageUrl, name, usersCount, isBoosted }) {
   return (
     <Container>
@@ -64,7 +63,7 @@ export default function Channel({ imageUrl, name, usersCount, isBoosted }) {
           {isBoosted && <FaArrowAltCircleUp color="#4CD863" />}
         </Row>
         <TotalUsers>
-          {usersCount > 0 ? displayUserCount(usersCount) : "No"} Users
+          {usersCount > 0 ? numberWithK(usersCount) : "No"} Users
         </TotalUsers>
       </Column>
     </Container>

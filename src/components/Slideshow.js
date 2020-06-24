@@ -129,13 +129,13 @@ const IMAGES = [
   {
     id: 1,
     imageUrl:
-      "https://cdn.zeplin.io/5ee9c3b9cc2c462aa1abc981/assets/34479FD7-5998-4B08-9711-E04B00D3E405.png",
-    text: "Valhahalalalal alkasdkasjda"
+      "https://www.powerpyx.com/wp-content/uploads/the-last-of-us-2-wallpaper.jpg",
+    text: "The Last of Us Part 2 fans are playing real songs on its guitar"
   },
   {
     id: 2,
     imageUrl:
-      "https://www.powerpyx.com/wp-content/uploads/the-last-of-us-2-wallpaper.jpg",
+      "https://cdn.zeplin.io/5ee9c3b9cc2c462aa1abc981/assets/34479FD7-5998-4B08-9711-E04B00D3E405.png",
     text:
       "Become a legendary Viking warrior raised on tales of battle and glory."
   },
@@ -143,7 +143,8 @@ const IMAGES = [
     id: 3,
     imageUrl:
       "https://images.pushsquare.com/3d2e6274c6162/ghost-of-tsushima-gold.900x.jpg",
-    text: "Japan war sword HIIIIASDASAHSA"
+    text:
+      "New Ghost Of Tsushima Details: Stances, The Deadliness Of The Katana, Screenshots"
   }
 ];
 

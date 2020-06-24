@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { IoMdMail } from "react-icons/io";
+import { Row } from "../utils/flexbox";
 
 const Section = styled.section`
   background-color: #2e0f53;
@@ -62,6 +63,8 @@ const SubscribeButton = styled.button`
   height: 44px;
   width: 166px;
 
+  margin-left: 27px;
+
   cursor: pointer;
 `;
 
@@ -70,15 +73,17 @@ export default function Newsletter() {
     <Section>
       <Container>
         <GetDealsText>Get your best games deals first</GetDealsText>
-        <div style={{ position: "relative" }}>
-          <EmailInput type="text" placeholder="Enter your email" />
-          <IoMdMail
-            size={20}
-            style={{ position: "absolute", left: "10", top: "11" }}
-            color="#4f4f53"
-          />
-        </div>
-        <SubscribeButton>Subscribe</SubscribeButton>
+        <Row justifyContent="flex-end">
+          <div style={{ position: "relative" }}>
+            <EmailInput type="text" placeholder="Enter your email" />
+            <IoMdMail
+              size={20}
+              style={{ position: "absolute", left: "10", top: "11" }}
+              color="#4f4f53"
+            />
+          </div>
+          <SubscribeButton>Subscribe</SubscribeButton>
+        </Row>
       </Container>
     </Section>
   );

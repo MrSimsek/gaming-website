@@ -37,6 +37,7 @@ export default function LatestPosts() {
             commentsCount={post.commentsCount}
             isPro={post.isPro}
             excerpt={post.excerpt}
+            clapsCount={post.clapsCount}
           />
         ))}
       </Posts>

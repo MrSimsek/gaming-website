@@ -15,6 +15,7 @@ const Games = styled.div`
 
 const LoadMoreButton = styled(Button)`
   margin: 1em auto;
+  margin-top: 31px;
   padding: 1em;
   width: 218px;
 `;
