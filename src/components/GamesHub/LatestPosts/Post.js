@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaRetweet, FaCommentAlt } from "react-icons/fa";
+import { FaRetweet, FaCommentAlt, FaHandPaper } from "react-icons/fa";
 import { IoIosShare } from "react-icons/io";
 
 const PostItem = styled.li`
@@ -146,7 +146,8 @@ export default function Post({
   username,
   followerCount,
   isPro,
-  commentsCount
+  commentsCount,
+  excerpt
 }) {
   return (
     <PostItem>
@@ -186,12 +187,7 @@ export default function Post({
         </User>
         <CreatedTime>3hrs ago</CreatedTime>
       </div>
-      <Content>
-        Sniper isnt overpowered. Sniper has some of the lowest damage outputs in
-        the game. 50 damage per shot is terrible, especially with the fire rate.
-        Compared to heavy, who has 400+ DPS!.. Read More tell me how sniper
-        compares.
-      </Content>
+      <Content>{excerpt ? excerpt : "This is placeholder."}</Content>
       <Footer>
         <ActionButtons>
           <ActionButton>
@@ -201,7 +197,7 @@ export default function Post({
             <IoIosShare size={20} />
           </ActionButton>
           <ActionButton>
-            <FaRetweet size={20} />
+            <FaHandPaper size={20} />
           </ActionButton>
         </ActionButtons>
         <Comments>

@@ -36,6 +36,7 @@ export default function LatestPosts() {
             followerCount={post.followerCount}
             commentsCount={post.commentsCount}
             isPro={post.isPro}
+            excerpt={post.excerpt}
           />
         ))}
       </Posts>
