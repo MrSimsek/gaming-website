@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 
 const Row = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ const ChannelName = styled.span`
   line-height: normal;
   letter-spacing: -0.34px;
   color: #ffffff;
+  margin-right: 10px;
 `;
 
 const TotalUsers = styled.span`
@@ -46,7 +48,7 @@ const TotalUsers = styled.span`
 const displayUserCount = count =>
   count % 1000 === 0 ? `${count / 1000}K` : count;
 
-export default function Channel({ imageUrl, name, usersCount }) {
+export default function Channel({ imageUrl, name, usersCount, isBoosted }) {
   return (
     <Container>
       <ChannelImage
@@ -57,7 +59,10 @@ export default function Channel({ imageUrl, name, usersCount }) {
         }
       />
       <Column>
-        <ChannelName>{name ? `#${name}` : "No Name"}</ChannelName>
+        <Row alignItems="center">
+          <ChannelName>{name ? `#${name}` : "No Name"}</ChannelName>
+          {isBoosted && <FaArrowAltCircleUp color="#4CD863" />}
+        </Row>
         <TotalUsers>
           {usersCount > 0 ? displayUserCount(usersCount) : "No"} Users
         </TotalUsers>

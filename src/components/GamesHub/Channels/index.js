@@ -29,12 +29,13 @@ export default function Channels() {
     <Column style={{ marginLeft: "50px" }} alignItems="flex-start">
       <Title>Channels</Title>
       <ChannelsContainer>
-        {CHANNELS_DATA.map(({ id, imageUrl, name, usersCount }) => (
+        {CHANNELS_DATA.map(({ id, imageUrl, name, usersCount, isBoosted }) => (
           <Channel
             key={id}
             imageUrl={imageUrl}
             name={name}
             usersCount={usersCount}
+            isBoosted={isBoosted}
           />
         ))}
       </ChannelsContainer>
