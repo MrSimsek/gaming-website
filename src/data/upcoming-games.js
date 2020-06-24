@@ -33,19 +33,5 @@ export const GAMES_DATA = [
       "https://cdn-products.eneba.com/resized-products/5M4dNi9_xdVO0NJGeuANTUtAbO1gU5XbmgYjkzmZ0R8_390x400_1x-0.jpeg",
     name: "Football Manager 2021 Steam Key",
     usersCount: 195000
-  },
-  {
-    id: 6,
-    imageUrl:
-      "https://cdn-products.eneba.com/resized-products/5M4dNi9_xdVO0NJGeuANTUtAbO1gU5XbmgYjkzmZ0R8_390x400_1x-0.jpeg",
-    name: "Football Manager 2021 Steam Key",
-    usersCount: 195000
-  },
-  {
-    id: 7,
-    imageUrl:
-      "https://cdn-products.eneba.com/resized-products/5M4dNi9_xdVO0NJGeuANTUtAbO1gU5XbmgYjkzmZ0R8_390x400_1x-0.jpeg",
-    name: "Football Manager 2021 Steam Key",
-    usersCount: 195000
   }
 ];
