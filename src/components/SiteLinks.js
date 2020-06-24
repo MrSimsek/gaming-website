@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 import { Column } from "../utils/flexbox";
 
-const ListContainer = styled(Column)`
-  margin-right: 5em;
-`;
+const ListContainer = styled(Column)``;
 
 const Title = styled.span`
   font-size: 15px;

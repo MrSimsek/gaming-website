@@ -8,10 +8,9 @@ import WhoToFollow from "./WhoToFollow";
 import Button from "../Button";
 
 const Section = styled.section`
-  margin: auto;
+  margin: 2em auto;
   width: 90%;
   max-width: 1200px;
-  margin-top: 2em;
 `;
 
 const Head = styled.div`
