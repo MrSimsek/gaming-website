@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 
 const Row = styled.div`
   display: flex;
@@ -12,10 +13,10 @@ const Column = styled.div`
 `;
 
 const Game = styled(Column)`
-  margin: 0.8em;
   flex: 1;
   min-width: 192px;
   justify-content: space-between;
+  position: relative;
 `;
 
 const GameImage = styled.img`
@@ -73,9 +74,32 @@ const PreOrderButton = styled.button`
   cursor: pointer;
 `;
 
+const FavoriteButton = styled.button`
+  background: none;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+`;
+
 export default function UpcomingGame({ imageUrl, name }) {
+  const [isFavorited, setIsFavorited] = React.useState(true);
+
+  const toggleFavorite = () => setIsFavorited(!isFavorited);
+
   return (
     <Game>
+      <FavoriteButton onClick={toggleFavorite}>
+        {isFavorited ? (
+          <BsHeartFill size={25} color="#fff" />
+        ) : (
+          <BsHeart size={25} color="#fff" />
+        )}
+      </FavoriteButton>
       <GameImage
         src={
           imageUrl

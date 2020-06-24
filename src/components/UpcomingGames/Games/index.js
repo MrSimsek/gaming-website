@@ -7,10 +7,9 @@ import Button from "../../Button";
 import { GAMES_DATA } from "../../../data/upcoming-games";
 
 const Games = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
   margin-top: 2em;
 `;
 
