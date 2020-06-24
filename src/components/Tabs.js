@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { FaHome, FaGamepad, FaStore, FaTrophy } from "react-icons/fa";
+
+import homeIcon from "../images/home.svg";
+import socialIcon from "../images/games.svg";
+import marketIcon from "../images/market.svg";
+import tournamentsIcon from "../images/tournaments.svg";
 
 const Section = styled.section`
   background-color: #151517;
@@ -42,6 +46,8 @@ const Tab = styled.li`
   transition: all 0.2s ease-in-out;
 `;
 
+const TabImage = styled.img``;
+
 const TabTitle = styled.span`
   font-size: 15px;
   font-weight: 500;
@@ -54,9 +60,9 @@ const TabTitle = styled.span`
   margin-left: 1em;
 `;
 
-const TabItem = ({ icon, title, active, color, onClickHandler }) => (
+const TabItem = ({ icon, title, active, color, onClickHandler, image }) => (
   <Tab isActive={active} color={color} onClick={onClickHandler}>
-    {icon}
+    <TabImage src={image} />
     <TabTitle>{title}</TabTitle>
   </Tab>
 );
@@ -72,28 +78,28 @@ export default function TabsComponent() {
             color="#0091ff"
             active={activeTab === "home"}
             title="Home"
-            icon={<FaHome size={25} color="#0091ff" />}
+            image={homeIcon}
             onClickHandler={() => setActiveTab("home")}
           />
           <TabItem
             color="#f7b500"
             active={activeTab === "social"}
             title="Social"
-            icon={<FaGamepad size={25} color="#f7b500" />}
+            image={socialIcon}
             onClickHandler={() => setActiveTab("social")}
           />
           <TabItem
             color="#e02020"
             active={activeTab === "market"}
             title="Market"
-            icon={<FaStore size={25} color="#e02020" />}
+            image={marketIcon}
             onClickHandler={() => setActiveTab("market")}
           />
           <TabItem
             color="#fa6400"
             active={activeTab === "tournements"}
             title="Tournements"
-            icon={<FaTrophy size={25} color="#fa6400" />}
+            image={tournamentsIcon}
             onClickHandler={() => setActiveTab("tournements")}
           />
         </Tabs>
