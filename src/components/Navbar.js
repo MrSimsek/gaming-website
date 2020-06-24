@@ -21,14 +21,30 @@ const Nav = styled.nav`
 const NavLink = styled.a`
   margin: 0 1em;
   cursor: pointer;
-  color: ${({ active }) => (active ? "#0091ff" : "#8e8e93")};
+  color: ${({ active }) => (active ? "#0091ff" : "#414347")};
+  position: relative;
 
   &:hover {
     color: #0091ff;
   }
 `;
 
+const Badge = styled.div`
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  border: 1px solid #1c1c1e;
+  background-color: #0091ff;
+  position: absolute;
+  top: 2px;
+  right: 1px;
+`;
+
 function Navbar() {
+  const [hasNotifications, setHasNotifications] = React.useState(true);
+
+  const closeNotifications = () => setHasNotifications(false);
+
   return (
     <Nav>
       <NavLink href="#" active>
@@ -37,8 +53,9 @@ function Navbar() {
       <NavLink href="#">
         <FaWallet size={20} />
       </NavLink>
-      <NavLink href="#">
+      <NavLink href="#" onClick={closeNotifications}>
         <FaBell size={20} />
+        {hasNotifications && <Badge />}
       </NavLink>
       <NavLink href="#">
         <FaHeart size={20} />
