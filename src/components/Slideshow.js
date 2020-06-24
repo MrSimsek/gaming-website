@@ -33,8 +33,8 @@ const Slide = styled.div`
   background-size: cover;
   color: white;
   padding-bottom: 55px;
-  width: 770px;
-  height: 391px;
+  width: 900px;
+  height: 450px;
   display: ${({ isCurrent, isPrev, isNext }) =>
     isCurrent || isPrev || isNext ? "flex" : "none"};
   flex-direction: column;
@@ -57,14 +57,14 @@ const Slide = styled.div`
   z-index: ${({ isNext, isPrev }) => (isPrev || isNext ? "-10" : "0")};
   opacity: ${({ isNext, isPrev }) => (isPrev || isNext ? "0.4" : "1")};
   transform: translateX(
-      ${({ isPrev, isNext }) => (isPrev ? "-630px" : isNext ? "585px" : "0")}
+      ${({ isPrev, isNext }) => (isPrev ? "-730px" : isNext ? "690px" : "0")}
     )
     scale(${({ isPrev, isNext }) => (isPrev || isNext ? "0.8" : "1")})
     ${({ isNext, isPrev }) =>
       isPrev
-        ? "perspective(1500px) rotateY(45deg)"
+        ? "perspective(2000px) rotateY(45deg)"
         : isNext
-        ? "perspective(1500px) rotateY(-45deg)"
+        ? "perspective(2000px) rotateY(-45deg)"
         : "none"};
   transition: transform 0.3s ease-in-out;
 `;

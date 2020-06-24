@@ -59,12 +59,6 @@ const DiscoverAllButton = styled(Button)`
   margin-left: auto;
 `;
 
-const LoadMoreButton = styled(Button)`
-  margin: 1em auto;
-  padding: 1em;
-  width: 218px;
-`;
-
 export default function UpcomingGames() {
   return (
     <Section>
@@ -78,7 +72,6 @@ export default function UpcomingGames() {
         </Head>
         <Body>
           <Games />
-          <LoadMoreButton>LOAD MORE</LoadMoreButton>
         </Body>
       </Container>
     </Section>

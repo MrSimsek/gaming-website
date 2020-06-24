@@ -40,6 +40,7 @@ const TotalUsers = styled.span`
   line-height: normal;
   letter-spacing: -0.29px;
   color: #6f747e;
+  margin-top: 3px;
 `;
 
 const displayUserCount = count =>

@@ -8,8 +8,10 @@ const Section = styled.section`
 
 const Container = styled.div`
   margin: auto;
-  width: 90%;
   max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 
 const Tabs = styled.ul`
@@ -20,6 +22,7 @@ const Tabs = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  max-width: 1050px;
 `;
 
 const Tab = styled.li`

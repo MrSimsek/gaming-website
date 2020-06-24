@@ -12,10 +12,9 @@ const Column = styled.div`
 `;
 
 const Game = styled(Column)`
-  margin: 1em;
+  margin: 0.8em;
   flex: 1;
-  margin-left: 0;
-  width: 192px;
+  min-width: 192px;
   justify-content: space-between;
 `;
 

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { FaUserPlus } from "react-icons/fa";
 
+import { numberWithSeperator } from "../../../utils/helpers";
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -41,6 +43,7 @@ const TotalFollowers = styled.span`
   line-height: normal;
   letter-spacing: -0.29px;
   color: #6f747e;
+  margin-top: 3px;
 `;
 
 const FollowButton = styled.button`
@@ -62,9 +65,7 @@ const FollowButton = styled.button`
   }
 `;
 
-const displayFollowerCount = count => count;
-
-export default function User({ imageUrl, name, usersCount }) {
+export default function User({ imageUrl, name, followersCount }) {
   return (
     <Container>
       <UserImage
@@ -77,7 +78,8 @@ export default function User({ imageUrl, name, usersCount }) {
       <Column>
         <UserDisplayName>{name ? `${name}` : "No Name"}</UserDisplayName>
         <TotalFollowers>
-          {usersCount > 0 ? displayFollowerCount(usersCount) : "No"} Users
+          {followersCount > 0 ? numberWithSeperator(followersCount, ".") : "No"}{" "}
+          Followers
         </TotalFollowers>
       </Column>
       <FollowButton>

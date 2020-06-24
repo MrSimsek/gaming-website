@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { FiSearch } from "react-icons/fi";
 
+const SearchInputContainer = styled.div`
+  position: relative;
+  flex: 2;
+  margin: 1em auto;
+`;
+
 const SearchInput = styled.input`
   border: none;
   background-color: #111113;
@@ -21,7 +27,7 @@ const SearchInput = styled.input`
 
 export default function SearchBar() {
   return (
-    <div style={{ position: "relative", flex: 2, margin: "1em" }}>
+    <SearchInputContainer>
       <SearchInput
         type="text"
         placeholder="Search games, gears, accessories.."
@@ -31,6 +37,6 @@ export default function SearchBar() {
         color="#8e8e93"
         size={25}
       />
-    </div>
+    </SearchInputContainer>
   );
 }

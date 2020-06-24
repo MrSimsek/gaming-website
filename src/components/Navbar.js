@@ -13,7 +13,7 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 1em;
+  margin: 1em auto;
   flex: 1;
 `;
 
