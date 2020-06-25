@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { FaRetweet, FaCommentAlt, FaHandPaper } from "react-icons/fa";
-import { IoIosShare } from "react-icons/io";
 
 import { numberWithK } from "../../../utils/helpers";
+
+import { ReactComponent as ClapIcon } from "../../../images/clap.svg";
+import { ReactComponent as ClappedIcon } from "../../../images/clapped.svg";
+import { ReactComponent as ShareIcon } from "../../../images/share.svg";
+import { ReactComponent as RepostIcon } from "../../../images/repost.svg";
+import { ReactComponent as CommentsIcon } from "../../../images/comments.svg";
 
 const PostItem = styled.li`
   border-radius: 10px;
@@ -109,12 +113,10 @@ const ActionButtons = styled.div`
 
 const ActionButton = styled.button`
   border: none;
-  border: 2px solid ${({ active }) => (active ? "#ffb100" : "#44484f")};
   background: none;
-  color: ${({ active }) => (active ? "#ffb100" : "#44484f")};
   border-radius: 10px;
-  padding: 5px 6px;
   cursor: pointer;
+  padding: 0;
   margin-right: 0.8em;
   display: flex;
   flex-direction: column;
@@ -154,6 +156,7 @@ const AddComment = styled.span`
   letter-spacing: normal;
   text-align: right;
   color: #0091ff;
+  cursor: pointer;
 `;
 
 const ClapsCount = styled.span`
@@ -251,13 +254,13 @@ export default function Post({
       <Footer>
         <ActionButtons>
           <ActionButton>
-            <FaRetweet size={20} />
+            <RepostIcon />
           </ActionButton>
           <ActionButton>
-            <IoIosShare size={20} />
+            <ShareIcon />
           </ActionButton>
           <ActionButton onClick={clapPost} active={userClaps > 0}>
-            <FaHandPaper size={20} />
+            {userClaps > 0 ? <ClappedIcon /> : <ClapIcon />}
           </ActionButton>
           {userClaps + clapsCount > 0 && (
             <ClapsCount>{numberWithK(userClaps + clapsCount)}</ClapsCount>
@@ -269,7 +272,7 @@ export default function Post({
           ) : (
             <AddComment>Add your comment</AddComment>
           )}
-          <FaCommentAlt size={15} />
+          <CommentsIcon />
         </Comments>
       </Footer>
     </PostItem>

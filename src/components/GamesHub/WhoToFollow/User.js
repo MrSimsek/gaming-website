@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { FaUserPlus } from "react-icons/fa";
 
 import { numberWithSeperator } from "../../../utils/helpers";
+
+import { ReactComponent as FollowIcon } from "../../../images/follow.svg";
 
 const Row = styled.div`
   display: flex;
@@ -48,21 +49,14 @@ const TotalFollowers = styled.span`
 
 const FollowButton = styled.button`
   border: none;
-  border: 2px solid #0a84ff;
   background: none;
-  color: #0a84ff;
   border-radius: 10px;
-  padding: 5px 6px;
+  padding: 0;
   cursor: pointer;
   margin-right: 0.8em;
   display: flex;
   flex-direction: column;
   margin-left: auto;
-
-  &:hover {
-    background-color: #0a84ff;
-    color: white;
-  }
 `;
 
 export default function User({ imageUrl, name, followersCount }) {
@@ -83,7 +77,7 @@ export default function User({ imageUrl, name, followersCount }) {
         </TotalFollowers>
       </Column>
       <FollowButton>
-        <FaUserPlus size={20} />
+        <FollowIcon />
       </FollowButton>
     </Container>
   );
